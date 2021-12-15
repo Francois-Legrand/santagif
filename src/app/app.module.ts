@@ -10,6 +10,7 @@ import { CadeauCardComponent } from './components/cadeau-card/cadeau-card.compon
 import { CadeauListComponent } from './components/cadeau-list/cadeau-list.component';
 import { CadeauComponent } from './pages/cadeau/cadeau.component';
 import { HomeComponent } from './pages/home/home.component';
+import { CreateCadeauxComponent } from './pages/create-cadeaux/create-cadeaux.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HomeComponent } from './pages/home/home.component';
     CadeauCardComponent,
     CadeauListComponent,
     CadeauComponent,
-    HomeComponent
+    HomeComponent,
+    CreateCadeauxComponent
   ],
   imports: [
     BrowserModule,
