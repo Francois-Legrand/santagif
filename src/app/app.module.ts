@@ -11,6 +11,7 @@ import { CadeauListComponent } from './components/cadeau-list/cadeau-list.compon
 import { CadeauComponent } from './pages/cadeau/cadeau.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CreateCadeauxComponent } from './pages/create-cadeaux/create-cadeaux.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CreateCadeauxComponent } from './pages/create-cadeaux/create-cadeaux.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
