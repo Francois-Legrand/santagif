@@ -1,0 +1,7 @@
+<form [formGroup]="cadeauForm" (ngSubmit)="addCadeau()">
+    <div class="form-group">
+      <label>Tile</label>
+      <input type="text" class="form-control" formControlName="title" placeholder="title">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
