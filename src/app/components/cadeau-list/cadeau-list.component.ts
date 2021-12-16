@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Cadeau } from 'src/app/models/cadeau';
+import { ActivatedRoute } from '@angular/router';
+import { Cadeau } from 'src/app/models/Cadeau';
 import { CadeauHTTPService } from 'src/app/services/cadeau-http.service';
 @Component({
   selector: 'app-cadeau-list',
@@ -19,8 +20,12 @@ export class CadeauListComponent implements OnInit {
   initCadeau(){
     this.service.findAll().subscribe(data => {
       this.cadeaux = data;
-      console.log(data)
     })
 
+  }
+  onDelete(id : string){
+    let result = this.cadeaux.filter(cadeau => cadeau.id != id);
+    this.cadeaux = result;
+    this.service.delete(id).subscribe();
   }
 }

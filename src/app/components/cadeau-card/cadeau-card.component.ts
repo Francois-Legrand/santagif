@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-cadeau-card',
@@ -6,11 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./cadeau-card.component.css']
 })
 export class CadeauCardComponent implements OnInit {
+  @Output() cadeauEvent = new EventEmitter<string>();
   @Input() cadeau!:any;
   constructor() { }
 
   ngOnInit(): void {
 
   }
-
+  deleteCadeau(id : string){
+    this.cadeauEvent.emit(id)
+  }
 }

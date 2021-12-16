@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Cadeau } from '../models/cadeau';
+import { Cadeau } from '../models/Cadeau';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 @Injectable({
@@ -15,8 +15,8 @@ export class CadeauHTTPService {
   create(cadeau : Cadeau) : Observable<Cadeau> {
     return this.http.post<Cadeau>(`${environment.apiUrl}/cadeaux/`, cadeau)
   }
-  delete(cadeau : Cadeau) : Observable<Cadeau> {
-    return this.http.delete<Cadeau>(`${environment.apiUrl}/cadeaux`)
+  delete(id : string) : Observable<Cadeau> {
+    return this.http.delete<Cadeau>(`${environment.apiUrl}/cadeaux/${id}`)
   }
 
 }
