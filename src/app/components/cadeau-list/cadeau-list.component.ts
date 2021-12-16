@@ -13,7 +13,6 @@ export class CadeauListComponent implements OnInit {
   constructor(private service : CadeauHTTPService) { 
     
   }
-
   ngOnInit(): void {
     this.initCadeau()
   }
@@ -24,8 +23,9 @@ export class CadeauListComponent implements OnInit {
 
   }
   onDelete(id : string){
-    let result = this.cadeaux.filter(cadeau => cadeau.id != id);
-    this.cadeaux = result;
-    this.service.delete(id).subscribe();
+    this.service.delete(id).subscribe(() =>{
+      let result = this.cadeaux.filter(cadeau => cadeau.id != id);
+      this.cadeaux = result;
+    });
   }
 }
