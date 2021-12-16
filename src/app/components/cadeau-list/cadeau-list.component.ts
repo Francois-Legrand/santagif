@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { ActivatedRoute } from '@angular/router';
+import { Cadeau } from 'src/app/models/Cadeau';
+import { CadeauHTTPService } from 'src/app/services/cadeau-http.service';
 @Component({
   selector: 'app-cadeau-list',
   templateUrl: './cadeau-list.component.html',
@@ -7,16 +9,23 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CadeauListComponent implements OnInit {
  
-  cadeaux: { id: number, title: string }[] = [
-    { "id": 0, "title": "Available" },
-    { "id": 1, "title": "Ready" },
-    { "id": 2, "title": "Started" }
-  ];
-  constructor() { 
+  cadeaux: Cadeau[] = [{id:"",title:""}];
+  constructor(private service : CadeauHTTPService) { 
     
   }
 
   ngOnInit(): void {
+    this.initCadeau()
   }
+  initCadeau(){
+    this.service.findAll().subscribe(data => {
+      this.cadeaux = data;
+    })
 
+  }
+  onDelete(id : string){
+    let result = this.cadeaux.filter(cadeau => cadeau.id != id);
+    this.cadeaux = result;
+    this.service.delete(id).subscribe();
+  }
 }

@@ -11,6 +11,9 @@ import { CadeauListComponent } from './components/cadeau-list/cadeau-list.compon
 import { CadeauComponent } from './pages/cadeau/cadeau.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CreateCadeauxComponent } from './pages/create-cadeaux/create-cadeaux.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +24,17 @@ import { CreateCadeauxComponent } from './pages/create-cadeaux/create-cadeaux.co
     CadeauListComponent,
     CadeauComponent,
     HomeComponent,
-    CreateCadeauxComponent
+    CreateCadeauxComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

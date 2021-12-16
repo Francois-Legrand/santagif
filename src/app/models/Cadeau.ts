@@ -1,7 +1,7 @@
 export class Cadeau {
-    id : number;
+    id : string;
     title : string;
-    constructor(id : number, title : string) {
+    constructor(id : string, title : string) {
         this.id = id;
         this.title = title;
     }
