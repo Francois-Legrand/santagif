@@ -12,7 +12,8 @@ export class FormComponent implements OnInit {
 cadeauForm : FormGroup;
   constructor(private fb : FormBuilder, private service : CadeauHTTPService, private router : Router) { 
     this.cadeauForm = this.fb.group({
-      title : ""
+      title : "",
+      image : ""
     })
   }
   ngOnInit(): void {
