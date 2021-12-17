@@ -1,7 +1,10 @@
-<form [formGroup]="cadeauForm" (ngSubmit)="addCadeau()">
+<form [formGroup]="cadeauForm" (ngSubmit)="addCadeau()" class="d-flex justify-content-center flex-column">
+    <h2>Le père nöel creé un cadeau</h2>
     <div class="form-group">
       <label>Tile</label>
       <input type="text" class="form-control" formControlName="title" placeholder="title">
+      <label>image</label>
+      <input type="text" class="form-control" formControlName="image" placeholder="image">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

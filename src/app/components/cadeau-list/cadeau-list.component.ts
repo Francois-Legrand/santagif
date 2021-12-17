@@ -9,7 +9,7 @@ import { CadeauHTTPService } from 'src/app/services/cadeau-http.service';
 })
 export class CadeauListComponent implements OnInit {
  
-  cadeaux: Cadeau[] = [{id:"",title:""}];
+  cadeaux: Cadeau[] = [{id:"",title:"",image:""}];
   constructor(private service : CadeauHTTPService) { 
     
   }
